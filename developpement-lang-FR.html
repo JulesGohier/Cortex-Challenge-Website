@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles/stylesheet_developpement.css">
+        <script src="./scripts/script_developpement.js"></script>
+        
+        <title>Developpement</title>
+    </head>
+    <body>
+        <header>
+            <img id="icon-left" src="./pictures/code.svg" alt="image vectorielle représentant le code (deux chevrons ><)">
+            <h1>Algorithme de resolution des defis</h1>
+            <img id="icon-right" src="./pictures/code.svg" alt="image vectorielle représentant le code (deux chevrons ><)">
+        </header>
+
+        <aside id="all-button-section">
+            <button class="button" onclick="afficherSection('section1'), reset_header('header1')">
+                
+                <img class="icon-button" src="./pictures/palette.svg" alt="Icônes vectorielles de palette de couleurs">
+                <span class="button-text">
+                    Couleur
+                </span>
+            </button>
+            <button class="button" onclick="afficherSection('section2'), reset_header('header2')">
+                <img class="icon-button" src="./pictures/reflexion.svg" alt="">
+                <span class="button-text">
+                    Reflexion
+                </span>
+            </button>
+            <button class="button" onclick="afficherSection('section3'), reset_header('header3')">
+                <img class="icon-button" src="./pictures/calculate.svg" alt="Icônes vectorielles d'un faisceau lumineux réfléchi">
+                <span class="button-text">
+                    Calcul
+                </span>
+            </button>
+            <button class="button" onclick="afficherSection('section4'), reset_header('header4')">
+                <img class="icon-button" src="./pictures/frequence.svg" alt="Icônes vectorielles d'une loupe qui cherche">
+                <span class="button-text">
+                    frequence
+                </span>
+            </button>
+            <button class="button" onclick="afficherSection('section5'), reset_header('header5')">
+                <img class="icon-button" src="./pictures/functions.svg" alt="Icônes vectorielles du symbole sigma">
+                <span class="button-text">
+                    Manquant
+                </span>
+            </button>
+            <button class="button" onclick="afficherSection('section6'), reset_header('header6')">
+                <img class="icon-button" src="./pictures/labyrinthe.svg" alt="Icônes vectorielles d'une sortie">
+                <span class="button-text">
+                    Labyrinthe
+                </span>
+            </button>
+            <button class="button" onclick="afficherSection('section7'), reset_header('header7')">
+                <img class="icon-button" src="./pictures/doublon.svg" alt="Icônes vectorielles du chiffre deux encadré">
+                <span class="button-text">
+                    Doublon
+                </span>
+            </button>
+            <button class="button" onclick="afficherSection('section8'), reset_header('header8')">
+                <img class="icon-button" src="./pictures/puzzle.svg" alt="Icônes vectorielles d'une pièce de puzzle">
+                <span class="button-text">
+                    Raisonnement
+                </span>
+            </button>
+        </aside>
+
+        <div id="icon-cortex" title="creee par rawpixel.com / Freepik"></div>
+
+        <main>
+
+            <div id="section1" class="section">
+                <h1 class="title">Couleur</h1>
+                <header id="header1" class="header">Couleur</header>
+                <div>
+                    <div id="subsection1" class="subsection">
+                        <iframe class="code-container" src="./algorithme/calliste/couleur-calliste.html"></iframe>
+                        <div class="explication-container">
+                            <p class="explication">
+                                Pour résoudre le challenge couleur, une idée qui nous est venu est de traduire les clefs du dictionnaires — qui peuvent être en anglais et en français — vers l’anglais uniquement, à l’aide de la librairie python googletrans. On peut alors comparer les clefs du dictionnaire avec leurs valeurs respectives et renvoyer l’unique valeur égale à sa clef de la carte.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="subsection2" class="subsection">
+
+                        <iframe class="code-container" src="./algorithme/jules/couleur-jules.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                L’algorithme pour résoudre le challenge couleur repose sur la création d'un dictionnaire “dictionary_pattern“ avec toutes les combinaisons valides possibles. Les éléments de ce dernier sont alors comparés avec le dictionnaire de la carte du défi “dictionary_input” et est renvoyée la clef du couple présent dans les deux dictionnaires.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="all-button-sous-section">
+                    <button class="button2" onclick="afficherSousSection('subsection1'), afficherheader('header1')">Calliste</button>
+                    <button class="button2" onclick="afficherSousSection('subsection2'), afficherheader('header1')">Jules</button>
+                </footer>
+            </div>
+            
+            <div id="section2" class="section">
+                <h1 class="title">Reflexion</h1>
+                <header id="header2" class="header">Reflexion</header>
+                <div>
+                    <div id="subsection3" class="subsection">
+                        <iframe class="code-container" src="./algorithme/calliste/reflexion-calliste.html"></iframe>
+                        <div class="explication-container">
+                            <p class="explication">
+                                L’algorithme résolvant le challenge réflexion reproduit le mode de résolution qu’un humain pourrait avoir, en simulant le voyage d’un faisceau lumineux traversant la carte.
+
+                                Le principe est de se déplacer cellule par cellule, d’extraire le contenu de la cellule à chaque itération et d’agir en fonction de celui-ci. Le déplacement s’effectue en fonction d’une variable « light_direction » — ayant pour états possibles : Nord, Sud, Est, Ouest — qui change lorsqu’une cellule contenant « / » ou « \ » est rencontrée (comme si le rayon lumineux se reflétait sur un miroir) et continue d’avancer dans la même direction sinon. Enfin, lorsque la cellule contient un nombre, l’algorithme renvoie ce dernier.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="subsection4" class="subsection">
+                        <iframe class="code-container" src="./algorithme/jules/reflexion-jules.html"></iframe>
+                        <div class="explication-container">
+                            <p class="explication"> 
+                                L’algorithme résolvant le challenge réflexion reproduit le mode de résolution qu’un humain pourrait avoir, en simulant le voyage d’un faisceau lumineux traversant la carte. Ainsi, les 3 paramètres que nous déterminons du premier coup d'œil sont : l’emplacement de chaque miroir, leur orientation et l'emplacement de la lampe.
+                                
+                                Ensuite, nous savons que la première recherche sera verticale, puis la deuxième horizontale et alternera de miroir en miroir (fonctions horizontal_search et vertical_search). Bien entendu, pour chaque recherche, le miroir le plus proche sera choisi (fonction more_near).
+
+                                Enfin, nous rassemblons l’ensemble des informations prises en compte auparavant telles que l’orientation de la dernière recherche et le type de miroir, ce qui permet de choisir le prochain intervalle de recherche.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="all-button-sous-section">
+                    <button class="button2" onclick="afficherSousSection('subsection3'), afficherheader('header2')">Calliste</button>
+                    <button class="button2" onclick="afficherSousSection('subsection4'), afficherheader('header2')">Jules</button>
+                </footer>
+            </div>
+
+            <div id="section3" class="section">
+                <h1 class="title">Calcul</h1>
+                <header id="header3" class="header">Calcul</header>
+                <div>
+                    <div id="subsection5" class="subsection">
+                        <iframe class="code-container" src="./algorithme/calliste/calcul-calliste.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                La solution de force brute nous a paru comme optimale pour résoudre le challenge calcul. En effet, la taille restreinte de nombres disponibles (6) pour le calcul rend cette solution viable.
+
+                                Pour ce faire, nous avons pensé à une approche récursive pour rechercher toutes les combinaisons possibles de nombres : on parcourt les éléments de la liste de manière récursive en calculant la somme partielle à chaque étape. Si la somme partielle correspond à la somme cible, la liste partielle est renvoyée comme solution. L'algorithme explore ainsi toutes les combinaisons possibles en utilisant la récursivité et en réduisant le problème en sous-problèmes plus petits.
+
+                                Ce dernier point fait de notre algorithme un algorithme de recherche profonde ("depth-first search" en anglais) : nous explorons récursivement les différents sous-ensembles de la liste de nombres, en ajoutant un élément à la fois. Nous commençons par le premier élément, puis nous explorons tous les sous-ensembles possibles en incluant cet élément. Ensuite, nous revenons en arrière et explorons les sous-ensembles sans cet élément.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="subsection6" class="subsection">
+                        <iframe class="code-container" src="./algorithme/jules/calcul-jules.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                Pour cet algorithme, nous avons eu beaucoup de difficulté à trouver une solution autre que la force brute. Dans nos recherches, nous avons pu rencontrer divers types d’algorithmes pouvant être appliqués (algorithme glouton), mais qui ne donnent pas de bon résultat. Cela nous a permis d'apprendre l’existence du problème du sac à dos, qui se rapproche du défi calcul et dont l’algorithme de résolution peut s’appliquer au défi. Le but de cet algorithme est de remplir un sac avec un maximum d'éléments possibles. En sachant que, chaque élément à une valeur et un “poids”, et le sac un poids maximum.
+                                
+                                Enfin, nous avons trouvé la programmation dynamique — qui se rapproche de la méthode de force brute — qui évite de reproduire les mêmes calculs (ex. 1+2 = 2+1). Le principe est de stocker tous les calculs déjà effectués dans un tableau et de vérifier avant chaque nouvelle opération que ce calcul n’a pas déjà été effectué.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="all-button-sous-section">
+                    <button class="button2" onclick="afficherSousSection('subsection5'), afficherheader('header3')">Calliste</button>
+                    <button class="button2" onclick="afficherSousSection('subsection6'), afficherheader('header3')">Jules</button>
+                </footer>
+            </div>
+
+            <div id="section4" class="section">
+                <h1 class="title">Frequence</h1>
+                <header id="header4" class="header">Frequence</header>
+                <div>
+                    <div id="subsection7" class="subsection">
+                        <iframe class="code-container" src="./algorithme/calliste/frequence-calliste.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                Notre première approche pour résoudre le challenge fréquence fut d’utiliser la fonction Counter de la librairie python collections sur une unique liste créée au préalable à partir de la liste de listes donnée par la carte, puis renvoyer le dernier élément du dictionnaire Counter (élément ayant le plus faible nombre d’apparition).
+
+                                Après réflexion, une version plus simple et plus performante nous est apparue. Désormais nous utilisons la fonction chain.from_iterable() de la librairie itertools plutôt qu’une boucles for pour créer une unique liste à partir de la liste de listes initiale car plus rapide. Enfin, pour renvoyer l’élément avec la plus faible valeur, on utilise la fonction min() sur les clefs du dictionnaire counter.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="subsection8" class="subsection">
+                        <iframe class="code-container" src="./algorithme/jules/frequence-jules.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                Pour résoudre le défi fréquence, l’algorithme qui nous est venu de suite a pour principe la création d’un dictionnaire, dans lequel est stocké les différents mots du dictionnaire de la carte “list_input” comme clefs, avec pour valeurs correspondantes leur nombre d’apparitions. 
+                                
+                                Enfin, on itère sur le dictionnaire ainsi créé et on retourne la clef avec la plus faible valeur correspondante.étape est de créer des arêtes pour toutes les cases vides adjacentes entre elles. Les sous graphes étant réalisés, il ne suffit plus que de les convertir en liste et de rechercher l'information voulue.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="all-button-sous-section">
+                    <button class="button2" onclick="afficherSousSection('subsection7'), afficherheader('header4')">Calliste</button>
+                    <button class="button2" onclick="afficherSousSection('subsection8'), afficherheader('header4')">Jules</button>
+                </footer>
+            </div>
+
+            <div id="section5" class="section">
+                <h1 class="title">Manquant</h1>
+                <header id="header5" class="header">Manquant</header>
+                <div>
+                    <div id="subsection9" class="subsection">
+                        <iframe class="code-container" src="./algorithme/calliste/manquant-calliste.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                L’algorithme que nous avons pensé pour le challenge manquant sépare la liste initiale donnée par la carte en 2 listes distinctes pour les 2 couleurs (rouge et bleu) et trie ces 2 dernières (par ordre croissant). Ensuite, une variable est initialisée au premier terme de chacune des 2 listes. Alors, chaque liste est parcourue à l’aide d’une boucle for et l’élément de la liste comparé à la variable, si l’élément et la variable sont différents, on renvoie la valeur de la variable, sinon on incrémente la variable de 1.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="subsection10" class="subsection">
+                        <iframe class="code-container" src="./algorithme/jules/manquant-jules.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                Pour résoudre le défi manquant, l’algorithme repose sur une formule arithmétique permettant de calculer la somme attendue d’une suite géométrique de raison un. L'algorithme réalise ensuite la soustraction de la somme précédente par la somme de tous les éléments de la suite. Si le résultat est différent de 0, on renvoie le résultat, qui est le nombre manquant.                            </p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="all-button-sous-section">
+                    <button class="button2" onclick="afficherSousSection('subsection9'), afficherheader('header5')">Calliste</button>
+                    <button class="button2" onclick="afficherSousSection('subsection10'), afficherheader('header5')">Jules</button>
+                </footer>
+            </div>
+
+            <div id="section6" class="section">
+                <h1 class="title">Labyrinthe</h1>
+                <header id="header6" class="header">Labyrinthe</header>
+                <div>
+                    <div id="subsection11" class="subsection">
+                        <iframe class="code-container" src="./algorithme/calliste/labyrinthe-calliste.html"></iframe>
+
+                        <div class="explication-container">
+                            <p class="explication">
+                                Notre première approche pour résoudre le challenge labyrinthe fut de construire un algorithme basé sur des boucles while et en utilisant des tuples pour noter les coordonnées de la matrice déjà empruntées. L’algorithme empruntait en priorité les coordonnées qui ne sont pas enregistrées et si pas le choix, il emprunte les coordonnées déjà empruntées précédemment.
+
+                                Finalement la solution retenue est un algorithme de recherche en profondeur (soi de force brute) pour explorer les cellules du labyrinthe à partir du point de départ, en suivant tous les chemins possibles jusqu'à atteindre la sortie du labyrinthe.
+
+                                Pour ça, le programme commence par rechercher les coordonnées du point de départ "D". Ensuite, il initialise une pile (stack) et un ensemble « visited » pour suivre les cellules visitées.
+
+                                À l'intérieur de la boucle principale, tant que la pile n'est pas vide, le programme extrait la dernière cellule de la pile à l'aide de la méthode pop(). Il vérifie si cette cellule n’est pas la sortie, si c'est le cas, il renvoie les coordonnées de cette cellule, indiquant la sortie du labyrinthe.
+
+                                Si la cellule extraite n'est pas la sortie, le programme la marque comme visitée en l'ajoutant à un ensemble visited. Ensuite, il explore les cellules voisines (en haut, en bas, à gauche et à droite) en vérifiant d'abord si elles sont valides (à l'intérieur de la matrice et non des murs) et si elles n'ont pas déjà été visitées. Les cellules valides non visitées sont ajoutées à la pile pour être explorées ultérieurement.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="subsection12" class="subsection">
+                        <iframe class="code-container" src="./algorithme/jules/labyrinthe-jules.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                La première idée que nous avions eu pour résoudre le défi labyrinthe était d’utiliser la librairie pycsp3 mais son utilisation étant trop complexe et trop lente nous l’avons donc laissé de côté.
+                            
+                                Par la suite, en relisant les règles nous avons remarqué qu'il y avait une entrée pour une unique sortie et en reprenant nos cours sur les graphes une idée nous est venue. Si nous décomposons le labyrinthe en graphes, on remarque qu'il existe un sous graphe connexe entre la sortie et l'entrée. Il suffit de transformer en liste l’ensemble des graphes et de trouver une liste qui contient l'entrée et renvoyer la sortie.
+
+                                Pour réaliser cet algorithme, nous avons ainsi utilisé la librairie networkx qui permet de construire des graphes. La première étape est alors de rechercher les cases vides, le point de départ et les sorties. Pour chacun d'entre eux est créé un nœud sur le graphe. La seconde étape est de créer des arêtes pour toutes les cases vides adjacentes. 
+
+                                Enfin, chaque sous-graphe est transformé en liste et une recherche est effectuée pour vérifier s' ils contiennent ou non la case départ ainsi que la case de sortie, pour renvoyer le chiffre contenue par cette dernière.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="all-button-sous-section">
+                    <button class="button2" onclick="afficherSousSection('subsection11'), afficherheader('header6')">Calliste</button>
+                    <button class="button2" onclick="afficherSousSection('subsection12'), afficherheader('header7')">Jules</button>
+                </footer>
+            </div>
+
+            <div id="section7" class="section">
+                <h1 class="title">Doublon</h1>
+                <header id="header7" class="header">Doublon</header>
+                <div>
+                    <div id="subsection13" class="subsection">
+                        <iframe class="code-container" src="./algorithme/calliste/doublon-calliste.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                L’algorithme pour résoudre le challenge doublon fonctionne sur le même principe que l’algorithme pour fréquence. On utilise la fonction chain.from_iterable() de la librairie itertools pour créer une unique liste à partir de la liste de listes initiale, puis on utilise la fonction Counter pour obtenir un dictionnaire des mots de la liste obtenue avec leurs occurrences pour valeurs.
+
+                                Enfin, on utilise une boucle for pour retrouver la clé du dictionnaire ayant pour valeur 2.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="subsection14" class="subsection">
+                        <iframe class="code-container" src="./algorithme/jules/doublon-jules.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                Le principe de l’algorithme résolvant le défi doublon est très similaire à celui du défi fréquence: un dictionnaire est créé, dans lequel est stocké les différents mots du dictionnaire de la carte “list_input” comme clefs, avec pour valeurs correspondantes leur nombre d’apparitions. Enfin, on itère sur le dictionnaire ainsi créé et on retourne la clef avec pour valeur correspondante 2.                            
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="all-button-sous-section">
+                    <button class="button2" onclick="afficherSousSection('subsection13'), afficherheader('header7')">Calliste</button>
+                    <button class="button2" onclick="afficherSousSection('subsection14'), afficherheader('header7')">Jules</button>
+                </footer>
+            </div>
+
+            <div id="section8" class="section">
+                <h1 class="title">Raisonnement</h1>
+                <header id="header8" class="header">Raisonnement</header>
+                <div>
+                    <div id="subsection15" class="subsection">
+                        <iframe class="code-container" src="./algorithme/calliste/raisonnement-calliste.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                Notre approche initiale pour résoudre le challenge résonnement fut de regarder ligne par ligne si le nombre de cellules vides dans la matrice dessin (à partir de la première ligne présentant une case vide) correspondait au nombre de cellules contenant un X dans chaque ligne de chaque pièce.
+
+                                Cette méthode n’étant pas correcte (elle ne renvoyait pas toujours le résultat attendu selon les cartes), nous avons établi une deuxième méthode à la fois précise et efficace en temps qui repose sur 2 étapes.
+
+                                La première est de déterminer les coordonnées x et y de début et de fin du dessin (on réduit le dessin à sa seule « portion utile ») puis de comparer la longueur et la largeur de cette portion utile du dessin à la longueur et la largeur de chaque pièce. Si une pièce valide cette première étape, elle passe à la deuxième étape qui consiste à vérifier si chaque cellule de la pièce en question est bien différente de la portion utile du dessin, et si oui, on renvoie la lettre de la pièce.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="subsection16" class="subsection">
+                        <iframe class="code-container" src="./algorithme/jules/raisonnement-jules.html"></iframe>
+                        
+                        <div class="explication-container">
+                            <p class="explication">
+                                L' algorithme permettant de résoudre le défi raisonnement consiste en deux étapes, l’extraction et la comparaison. L’extraction des espaces vides de la matrice se fait en parcourant cette dernière; pour chaque case vide, on prend ses coordonnées et on les compare avec les coordonnées min et max actuelles (et on actualise ces valeurs à chaque fois si besoin) ce qui a pour but de définir la taille globale de la pièce pour pouvoir l’extraire du dessin. Enfin, on inverse les symboles de la matrice obtenue et on vérifie à quelle pièce elle correspond.                            </p>
+                        </div>
+                    </div>
+                </div>
+                <footer class="all-button-sous-section">
+                    <button class="button2" onclick="afficherSousSection('subsection15'), afficherheader('header8')">Calliste</button>
+                    <button class="button2" onclick="afficherSousSection('subsection16'), afficherheader('header9')">Jules</button>
+                </footer>
+            </div>
+        </main>
+
+        <footer>
+            <a href="./accueil-lang-FR.html"><img src="./pictures/log-out.svg" alt="symbole sortie"></a>
+            <h1>Developpement</h1>
+            <div>
+                <a target="_blank" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fleria-etud.univ-angers.fr%2F%7Ejugohier%2Fdeveloppement-lang-FR.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en"><img class="validateur" src="./pictures/valid-css.svg" alt="image validateur css"></a>
+                <a target="_blank" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fleria-etud.univ-angers.fr%2F%7Ejugohier%2Fdeveloppement-lang-FR.html"><img class="validateur" src="./pictures/valid-html.svg" alt="image validateur html"></a>
+            </div>
+        </footer>
+    </body>
+</html>

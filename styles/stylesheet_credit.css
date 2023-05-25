@@ -1,0 +1,186 @@
+@font-face {
+  font-family: 'Koulen';
+  src: url(../font/Koulen-Regular.ttf);
+}
+
+:root{
+  --main-white-color: white;
+  --main-yellow-color: #F9BE01;
+  --main-blue1-color: #015A9B;
+  --main-blue2-color: #013069;
+  --main-blue3-color: #014886;
+}
+  
+*{
+  font-family: 'Koulen';
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: radial-gradient(circle, var(--main-blue1-color) 0%, var(--main-blue2-color) 90%);
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas: 
+    "head head head"
+    "main main aside"
+    "foot foot foot"
+  ;
+  
+  grid-template-rows: 3.5vw auto 3.5vw;
+  grid-template-columns: auto auto 13vw;
+  overflow-x: hidden;
+}
+    
+header{grid-area: head; background: var(--main-blue3-color);}
+aside{grid-area: aside;}
+main{grid-area: main;}
+footer{grid-area: foot; background: var(--main-blue3-color);}
+
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > h1{
+  font-size: 1.5vw;
+}
+
+header > img{
+  width: 2.5vw;
+}
+
+#icon-left{
+  margin: 0px 0px 0px 30px;
+}
+
+#icon-right{
+  margin: 0px 30px 0px 0px;
+}
+
+#icon-cortex{
+  position: sticky;
+  right: 3vw;
+  top: 7vw;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+
+  background: url(../pictures/icon-cortex.jpg), center, no-repeat;
+  background-size: 100%;
+  box-shadow: inset 3px 10px 25px rgba(0, 0, 0, 0.25);
+
+  outline: var(--main-yellow-color) thick double;
+  animation: outline-offset-animation 3s infinite linear;
+}
+
+@keyframes outline-offset-animation{
+  0%{
+    outline-offset: 1vw;
+  }
+
+  50%{
+    outline-offset: 0.5vw;
+  }
+
+  100%{
+    outline-offset: 1vw;
+  }
+}
+
+main {
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px;
+  gap: 30px;
+}
+
+main > section{
+  overflow: auto;
+  border: thick double var(--main-yellow-color);
+  flex-wrap: wrap;
+  display: grid;
+  width: 12vw;
+  height: 18vw;
+  grid-template-areas: 
+    "head"
+    "main"
+  ;
+  grid-template-rows: 3vw auto;
+  grid-template-columns: auto;
+  background: var(--main-blue3-color);
+  
+}
+
+section > header{grid-area: head;}
+section > div{grid-area: main;}
+section > footer{grid-area: foot;}
+
+section > header{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  font-size: 0.8vw;
+}
+
+section > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+}
+
+section > div > ul{
+  margin-top: 10px;
+  text-align: center;
+}
+
+section > div > img{
+  width: 8vw;
+  border-radius: 10%;
+}
+
+a{
+  text-decoration: underline 0.1vw var(--main-yellow-color);
+  
+}
+
+a:hover{
+  font-style: italic;
+}
+
+
+footer, footer > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+footer > h1{
+  margin-left: 120px;
+  font-size: 1.5vw;
+}
+
+footer > a > img{
+  margin: 10px 0px 0px 30px;
+  width: 2.5vw;
+}
+
+.validateur{
+  margin: 10px 30px 0px 0px;
+  width: 5vw;
+  font-size: 1.5vw;
+}

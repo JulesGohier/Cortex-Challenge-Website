@@ -1,0 +1,300 @@
+@font-face {
+  font-family: 'Koulen';
+  src: url(../font/Koulen-Regular.ttf);
+}
+
+:root{
+    --main-white-color: white;
+    --main-yellow-color: #F9BE01;
+    --main-blue1-color: #015A9B;
+    --main-blue2-color: #013069;
+    --main-blue3-color: #014886;
+}
+    
+*{
+  color: white;
+  
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  
+}
+
+body {
+  font-family: 'Koulen';
+  background: radial-gradient(circle, var(--main-blue1-color) 0%, var(--main-blue2-color) 90%);
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-areas: 
+    "head head head"
+    "sidebar main icon"
+    "foot foot foot"
+  ;
+  
+  grid-template-rows: 3.5vw auto 3.5vw;
+  grid-template-columns: 5vw auto 5vw;
+}
+    
+header{grid-area: head; background: var(--main-blue3-color);}
+
+main{grid-area: main;}
+footer{grid-area: foot; background: var(--main-blue3-color);}
+
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header > h1{
+  font-size: 1.5vw;
+}
+
+header > img{
+  width: 2.5vw;
+}
+
+#all-button-section {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: space-evenly;
+}
+
+#icon-left{
+  margin: 0px 0px 0px 30px;
+}
+
+#icon-right{
+  margin: 0px 30px 0px 0px;
+}
+
+#icon-cortex{
+  grid-area: icon;
+  position: absolute;
+  right: 3vw;
+  top: 7vw;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+
+  background: url(../pictures/icon-cortex.jpg), center, no-repeat;
+  background-size: 100%;
+  box-shadow: inset 3px 10px 25px rgba(0, 0, 0, 0.25);
+
+  outline: var(--main-yellow-color) thick double;
+  animation: outline-offset-animation 3s infinite linear;
+}
+
+@keyframes outline-offset-animation{
+  0%{
+    outline-offset: 1vw;
+  }
+
+  50%{
+    outline-offset: 0.5vw;
+  }
+
+  100%{
+    outline-offset: 1vw;
+  }
+}
+
+main{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.all-button-sous-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.button{
+  display: flex;
+  flex-direction: row;
+  
+  align-self: center;
+  font-size: 1.5vw;
+  border-radius: 10px;
+  width: 6vh;
+  height: 6vh;
+  border: none;
+  background: var(--main-blue3-color);
+  transition: transform 0.3s ease;
+}
+
+.button > span{
+  opacity: 0;
+  margin: 15px;
+  align-self: center;
+  font-size: 2vh;
+}
+
+.icon-button{
+  margin:1vh ;
+  height: 4vh;
+}
+
+.button2 {
+  font-family: 'Koulen';
+  font-size: 2vh;;
+  border-radius: 10px;
+  width: 6vw;
+  height: 3.5vh;
+  border: none;
+  background: var(--main-blue3-color);
+}
+
+.button2:hover{
+  background: var(--main-blue1-color)
+}
+
+.button:hover{
+  background:  var(--main-blue1-color);
+}
+
+.button-text{
+  font-family: 'Koulen';
+}
+
+.button:hover,
+.button:hover .button-text{
+  opacity: 1;
+  transform: translateX(10px);
+}
+
+.section{
+  border: thick double var(--main-yellow-color);
+  justify-self: center;
+  align-self: center;
+  grid-area: main;
+
+  grid-template-areas: 
+    "head"
+    "main"
+    "foot"
+  ;
+  background:  var(--main-blue3-color);
+  grid-template-rows: 3vh 74vh 3vh;
+  width: 60vw;
+  height: 80vh;
+  border-radius: 10px;
+}
+
+.section > header{
+  border-radius: 10px;
+  grid-area: head;
+  display: flex;
+  justify-content: center;
+  font-size: 3vh;
+}
+.section > div{
+  grid-area: main;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.section > footer{
+  grid-area: foot;
+  border-radius: 10px;
+}
+
+.subsection{
+  grid-template-areas: 
+    "code"
+    "explication"
+  ;
+
+  grid-template-rows: auto 30vh;
+
+  width: 100%;
+  max-height: 80vh;
+}
+
+.code-container {
+  border: none;
+  grid-area: code;
+  z-index: 2;
+  background-color: #f3f3f3;
+  height: 43vh;
+  width: 100%;
+}
+
+.explication-container {
+  grid-area: explication;
+  z-index: 2;
+  background-color: white;
+  white-space: pre-wrap;
+  overflow: auto;
+  height: 30vh;
+  margin-top: 1vh;
+  display: flex;
+}
+
+
+.code-container .hljs-keyword{
+  color: blue;
+}
+
+.code-container .hljs-params{
+  color: blue;
+}
+
+code{
+  font-family: monospace;
+  align-self: flex-start;
+  justify-self: start;
+}
+
+.explication{ 
+  padding: 0px 10px 0px 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: black;
+}
+
+.section, .subsection {
+  display: none;
+}
+
+.header{
+  opacity: 0;
+}
+
+
+.title{
+  color: var(--main-yellow-color);
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  font-size: 5vw;
+}
+
+footer, footer > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+footer > h1{
+  margin-left: 120px;
+  font-size: 1.5vw;
+}
+
+footer > a > img{
+  margin: 10px 0px 0px 30px;
+  width: 2.5vw;
+}
+
+.validateur{
+  margin: 10px 30px 0px 0px;
+  width: 5vw;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+      });
+    </script>
+</head>
+<body>
+
+  <pre>
+    <code class="language-python">
+      """Optimisation du code --> utilisation de itertools plutot que extend """
+      from collections import Counter
+      from itertools import chain
+
+
+      def least_common(cnt: Counter):
+          """
+          Function that returns the least common element of a counter dict (cnt)
+          :param cnt: dict with words as keys and their occurrences as values
+          :return: least common element of the counter dict
+          """
+          return min(cnt, key=cnt.get)
+
+
+      def algo_frequency(card_list: list):
+          """
+          Function which groups all the words and their occurrence in a dict (cnt) and returns its least common element
+          :param card_list: a list of lists which contains the words (game_data)
+          :return: the least common element
+          """
+          cnt: Counter = Counter(chain.from_iterable(card_list))
+          return least_common(cnt)
+    </code>
+  </pre>
+
+  
+</body>
+</html>

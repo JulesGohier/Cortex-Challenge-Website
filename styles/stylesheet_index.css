@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Koulen';
+  src: url(../font/Koulen-Regular.ttf);
+}
+
+:root{
+  --main-white-color: white;
+  --main-yellow-color: #F9BE01;
+  --main-blue1-color: #015A9B;
+  --main-blue2-color: #013069;
+  --main-blue3-color: #014886;
+}
+
+*{
+  font-family: 'Koulen';
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  
+}
+
+body{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle, var(--main-blue1-color) 0%, var(--main-blue2-color) 90%);
+  width: 100%;
+  height: 100vh;
+}
+
+#icon-cortex {
+  margin-top: 5vw;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+
+  background: url(../pictures/icon-cortex.jpg), center, no-repeat;
+  background-size: 100%;
+  box-shadow: inset 3px 10px 25px rgba(0, 0, 0, 0.25);
+
+  animation: spin-animation 5s linear infinite;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.progress-bar {
+  width: 20vw;
+  height: 1vw;
+  background-color: var(--main-blue1-color);
+  border-radius: 20px;
+  overflow: hidden;
+  
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background: repeating-linear-gradient(135deg,#F9BE01 0 0.7vw,#F9CE01 0 1.5vw);
+  animation: progress-animation 3s linear;
+}
+
+body > div:last-child{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.validateur{
+  margin-top: 25vh;
+  width: 5vw;
+}
