@@ -107,7 +107,7 @@ aside{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   width: 5vw;
   height: 40vh;
   margin: auto 0px auto 0px;
