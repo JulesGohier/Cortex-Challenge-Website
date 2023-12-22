@@ -3,4 +3,4 @@
 
 - ### [Link GitHub Project](https://github.com/JulesGohier/Cortex-Challenge)
 
-- ### [Link Website](https://leria-etud.univ-angers.fr/~jugohier/)
+- ### [Link Website](https://leria-etud.univ-angers.fr/~jugohier/cortex_challenge)
